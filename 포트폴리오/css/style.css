@@ -585,7 +585,6 @@ span {
     height: 100%;
     margin: 0 auto;
 }
-
 .works_list {
     display: flex;
     margin: 0 auto;
@@ -593,33 +592,7 @@ span {
     display: flex;
     justify-content: center;
 }
-.back-list::after {
-    position: absolute;
-    bottom: -100px;
-    right: 300px;
-    display: block;
-    content: '';
-    background-image: url(../img/icon-works-bottom.png);
-    background-repeat: no-repeat;
-    width: 154px;
-    height: 147px;
-}
-.works_list > .works_item {
-    height: 300px;
-    margin-top: 30px;
-    margin-left: 30px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-    opacity: 1;
-    z-index: 3;
-}
-
-/* .works_list .works_link {
-    box-sizing: border-box;
-    width: 300px;
-    height: 300px;
-} */
-
-.works_list .works_link > img {
+.works_list .works_img > img {
     width: 300px;
     height: 300px;
 }
@@ -639,9 +612,15 @@ span {
     /* margin: 0 auto; */
     /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); */
 }
-
+.works_list > .works_item {
+    height: 300px;
+    margin-top: 30px;
+    margin-left: 30px;
+    /* box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16); */
+    /* opacity: 1; */
+    z-index: 3;
+}
 .works_text {
-    /* display: inline-block; */
     width: 100%;
     height: 100%;
     position: absolute;
@@ -650,8 +629,7 @@ span {
     color: #000;
     text-align: center;
     z-index: 1;
-    /* opacity: 0; */
-    transition: 0.7s;
+    transition: 0.5s;
 }
 /* .works_text > img {
     width: 50px;
@@ -659,7 +637,6 @@ span {
 } */
 
 /* ㅇㅇㅇㅇㅇㅇㅇㅇ */
-.hover_effect_box,
 .hover_event {
     /* width: 400px;
     height: 266px; */
@@ -671,28 +648,25 @@ span {
     -webkit-box-shadow: 1px 1px 2px #e6e6e6;
     -moz-box-shadow: 1px 1px 2px #e6e6e6;
     box-shadow: 1px 1px 2px #e6e6e6;
-    /* cursor: default; */
+    cursor: default;
     /* background: #fff; */
     /* box-sizing: initial; */
 }
-.hover_effect_box .caption {
-    /* width: 400px;
-    height: 266px; */
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-}
-.caption_title > img {
+/* 작업 여기서 부터 다시 시작하면 됨 --------------------------------------------- */
+.works_icon > img {
     width: 60px;
     height: 60px;
 }
+/* .content_text > p,
+span {
+    color: #000;
+} */
 /* 영역 */
-.hover_effect_box .content_bg {
+.hover_event .content_bg {
     display: block;
     position: relative;
 }
-.hover_effect_box .caption_title {
+.hover_event .works_icon {
     /* text-transform: uppercase; */
     /* color: #fff; */
     /* text-align: center; */
@@ -703,16 +677,15 @@ span {
     margin: 20px 0 0 0;
 }
 /* 호버 텍스트 */
-.hover_effect_box .caption_desc {
+.hover_event .content_text {
     font-size: 0.9em;
     line-height: 1.5;
     position: relative;
-    /* color: #fff; */
-    padding: 30px 20px 40px;
+    padding: 40px 40px 60px;
     text-align: center;
 }
 /* 더보기 박스 */
-.hover_effect_box .caption_link {
+.hover_event .works_link {
     display: inline-block;
     text-decoration: none;
     padding: 7px 14px;
@@ -724,22 +697,22 @@ span {
     box-shadow: 0 0 1px #000;
 }
 /* 더보기 호버 박스 색상 */
-.hover_effect_box .caption_link:hover {
+.hover_event .works_link:hover {
     -webkit-box-shadow: 0 0 10px #fff;
     -moz-box-shadow: 0 0 10px #fff;
     box-shadow: 0 0 10px #fff;
 }
 
-.hover_effect_1 .content_bg {
+.hover_action .content_bg {
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     -ms-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
-.hover_effect_1 .caption {
-    -ms-filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
-    filter: alpha(opacity=0);
+.hover_action .works_text {
+    /*  -ms-filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    filter: alpha(opacity=0); */
     opacity: 0;
     background-color: rgba(219, 127, 8, 0.7);
     -webkit-transition: all 0.4s ease-in-out;
@@ -749,15 +722,15 @@ span {
     transition: all 0.4s ease-in-out;
 }
 /* 돋보기 사진 */
-.hover_effect_1 .caption_title {
+.hover_action .works_icon {
     /*  display: none; */
     -webkit-transform: translateY(-90px);
     -moz-transform: translateY(-90px);
     -o-transform: translateY(-90px);
     -ms-transform: translateY(-90px);
     transform: translateY(-100px);
-    -ms-filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
-    filter: alpha(opacity=0);
+    /* -ms-filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    filter: alpha(opacity=0); */
     opacity: 1;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -766,15 +739,13 @@ span {
     transition: all 0.2s ease-in-out;
 }
 /* 폰트 */
-.hover_effect_1 .caption_desc {
-    /* display: none; */
+.hover_action .content_text {
     -webkit-transform: translateY(100px);
     -moz-transform: translateY(100px);
     -o-transform: translateY(100px);
     -ms-transform: translateY(100px);
     transform: translateY(100px);
-    /* -ms-filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
-    filter: alpha(opacity=0); */
+
     opacity: 0;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
@@ -782,16 +753,14 @@ span {
     -ms-transition: all 0.2s linear;
     transition: all 0.2s linear;
 }
-.hover_effect_1:hover .content_bg {
+.hover_action:hover .content_bg {
     -webkit-transform: scale(1.1, 1.1);
     -moz-transform: scale(1.1, 1.1);
     -o-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
 }
-.hover_effect_1 .caption_link {
-    /* -ms-filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
-    filter: alpha(opacity=0); */
+.hover_action .works_link {
     opacity: 0;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -799,17 +768,13 @@ span {
     -ms-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-.hover_effect_1:hover .caption {
-    /* -ms-filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=100)'; */
-    /* filter: alpha(opacity=100); */
+.hover_action:hover .works_text {
     opacity: 1;
 }
 /* 모두 */
-.hover_effect_1:hover .caption_title,
-.hover_effect_1:hover .caption_desc,
-.hover_effect_1:hover .caption_link {
-    /* -ms-filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=100)'; */
-    /* filter: alpha(opacity=100); */
+.hover_action:hover .works_icon,
+.hover_action:hover .content_text,
+.hover_action:hover .works_link {
     opacity: 1;
     -webkit-transform: translateY(120px);
     -moz-transform: translateY(120px);
@@ -818,7 +783,7 @@ span {
     transform: translateY(0px);
 }
 /* 글자 */
-.hover_effect_1:hover .caption_desc {
+.hover_action:hover .content_text {
     -webkit-transition-delay: 0.2s;
     -moz-transition-delay: 0.2s;
     -o-transition-delay: 0.1s;
@@ -826,7 +791,7 @@ span {
     transition-delay: 0.1s;
 }
 /* 더보기 링크 */
-.hover_effect_1:hover .caption_link {
+.hover_action:hover .works_link {
     -webkit-transition-delay: 0.3s;
     -moz-transition-delay: 0.3s;
     -o-transition-delay: 0.3s;
@@ -891,13 +856,14 @@ span {
     text-align: left;
     margin-right: 300px;
 }
-.footer_box_title {
-}
+
 .footer_text_title {
     font-size: 40px;
     font-weight: 700;
 }
-
+.footer_text_box > span {
+    color: #fff;
+}
 .footer_text_box > a {
     display: block;
     font-size: 20px;
